@@ -1,0 +1,17 @@
+.container.form {
+    padding-top: 20px;
+}
+
+.btn-submit { 
+    background-color: #19A7CE !important;
+    width: 80px;
+    aspect-ratio: 2/1;
+    margin-top: 10px;
+    font-size: 17px;
+    color: white !important;
+    border-color: black;
+}
+
+.btn-submit:hover {
+    background-color: #146C94 !important;
+}

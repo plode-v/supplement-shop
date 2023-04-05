@@ -1,0 +1,18 @@
+.container.form-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+#justify-tab {
+    width: 100px;
+}
+
+.container.form-children {
+    padding: 80px 50px;
+    height: auto;
+    border: 1px solid;
+    width: 50%;
+}
