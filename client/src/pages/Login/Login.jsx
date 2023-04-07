@@ -29,33 +29,34 @@ const Login = () => {
     }
 
   return (
-    <Form className='container form' onSubmit={handleLogin}>
-        <Form.Group controlId='username'>
-            <Form.Label>Username:</Form.Label>
-            <Form.Control 
-                autoComplete='off'
-                type='text'
-                placeholder='Username' 
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-            />
-        </Form.Group>
-        <br />
-        <Form.Group controlId='password'>
-            <Form.Label>Password:</Form.Label>
-            <Form.Control 
-                type='password'
-                placeholder='Password' 
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-            />
-            <div style={{display: "grid", margin: "20px 0", lineHeight: "1.1", fontSize: "18px"}}>
-                <Form.Text>Example account: <strong>example</strong></Form.Text>
-                <Form.Text>Example password: <strong>example123</strong></Form.Text>
-            </div>
-            <Button variant='submit' type="submit">Login</Button>
-        </Form.Group>
-    </Form>
+    <div className='container'>
+        <Form className='container form' onSubmit={handleLogin}>
+            <Form.Group controlId='username' className='form-group'>
+                <Form.Label>Username:</Form.Label>
+                <Form.Control
+                    autoComplete='off'
+                    type='text'
+                    placeholder='Username' 
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                />
+            </Form.Group>
+            <Form.Group controlId='password' className='form-group'>
+                <Form.Label>Password:</Form.Label>
+                <Form.Control 
+                    type='password'
+                    placeholder='Password' 
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                />
+                <div style={{display: "grid", margin: "20px 0", lineHeight: "1.1", fontSize: "18px"}}>
+                    <Form.Text>Example account: <strong>example</strong></Form.Text>
+                    <Form.Text>Example password: <strong>example123</strong></Form.Text>
+                </div>
+                <Button variant='submit' type="submit">Login</Button>
+            </Form.Group>
+        </Form>
+    </div>
   )
 }
 

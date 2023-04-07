@@ -1,7 +1,5 @@
 import React from 'react'
 import { Tabs, Tab } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import Login from '../../pages/Login';
 import SignUp from '../../pages/SignUp';
 import "./styles.css"

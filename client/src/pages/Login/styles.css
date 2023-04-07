@@ -4,12 +4,13 @@
 
 .btn-submit { 
     background-color: #19A7CE !important;
-    width: 80px;
-    aspect-ratio: 2/1;
+    width: 100%;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: 600 !important;
     color: white !important;
     border-color: black;
+    border: 1px solid #19A7CE;
 }
 
 .btn-submit:hover {

@@ -1,49 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./styles.css"
-import axios from 'axios';
-import { Nav } from "react-bootstrap"
+import { Nav, Navbar, Container } from 'react-bootstrap';
 
-function NavBar() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState("");
-
-  useEffect(() => {
-	const token = localStorage.getItem("token");
-	if (token) {
-		axios.get("http://localhost:4000/api/me", {
-			headers: {
-				Authorization: `Bearer ${token}`
-			}
-		})
-		.then(response => {
-			setIsLoggedIn(true);
-			setUsername(response.data.user.username);
-			console.log(username)
-		})
-		.catch(error => {
-			console.log("Authentication error:", error)
-		}) 
-	}
-  }, []);
+const NavBar = () => {
 
   return (
-	<nav className='active'>
-		<Link to="/" id='logo'>Logo</Link>
-		<ul>
-			<li>
-				<Link to="/" className='link'>Home</Link>
-			</li>
-			{isLoggedIn ? (
-				<li>{username}</li>
-			) : (
-				<li>
-					<Link className='link' to="/login">Login</Link>
-				</li>
-			)}
-		</ul>
-	</nav>
+	<Navbar>
+		<Container>
+			<Navbar.Brand href='/'>Logo</Navbar.Brand>
+			<Navbar.Toggle aria-controls='navbar' />
+			<Navbar.Collapse id='navbar' className='justify-content-end'>
+				<Nav>
+					<Nav.Link><Link to="/" className='link'>Home</Link></Nav.Link>
+					<Nav.Link><Link to="/form" className='link'>Login</Link></Nav.Link>
+				</Nav>
+			</Navbar.Collapse>
+		</Container>
+	</Navbar>
   )
 }
 
